@@ -1,6 +1,6 @@
-import './Input.css';
+import '../styles/Input.css';
 import { useState } from 'react';
-import plusIcon from './assets/plus.svg';
+import plusIcon from '../assets/plus.svg';
 
 export function Input({ addTodo }){
     const [inputValue, setInputValue] = useState('');

@@ -1,5 +1,5 @@
-import './list.css';
-import deleteIcon from './assets/delete.svg';
+import '../styles/list.css';
+import deleteIcon from '../assets/delete.svg';
 
 export function List({ todos, toggleTodo, deleteTodo }){
     return (
