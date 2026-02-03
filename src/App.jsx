@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import { Input } from './Input.jsx'
-import { List } from './list.jsx'
+import { Input } from './components/Input.jsx'
+import { List } from './components/list.jsx'
 
 function App() {
   const [todos, setTodos] = useState([]);
