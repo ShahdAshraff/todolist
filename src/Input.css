@@ -1,0 +1,31 @@
+.input-container{
+    display: flex;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 10px;
+    justify-content: center;
+}
+.input{
+    flex: 1;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #78C3EB;
+    border-radius: 10px;
+}
+.AddButton{
+    padding: 10px 20px;
+    font-size: 16px;
+    color:black;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.AddButton img{
+    width: 16px;
+    height: 16px;
+}
