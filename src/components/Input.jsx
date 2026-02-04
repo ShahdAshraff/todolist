@@ -18,7 +18,7 @@ export function Input({ addTodo }){
             className="input"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            onKeyPress={(e) => e.key === 'Enter' && handleAdd()}
+            onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
         />
         <button onClick={handleAdd} className='AddButton'><img src={plusIcon}  alt="Add"/></button>
         </div>
