@@ -1,14 +1,20 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { Input } from './components/Input.jsx'
-import { List } from './components/List.jsx'
+import { Input } from './components/Input'
+import { List } from './components/List'
+
+interface Todo {
+  id: number;
+  text: string;
+  completed: boolean;
+}
 
 function App() {
-  const [todos, setTodos] = useState(() => {
+  const [todos, setTodos] = useState<Todo[]>(() => {
     const savedTodos = localStorage.getItem('todos');
     return savedTodos ? JSON.parse(savedTodos) : [];
   });
-  const [nextId, setNextId] = useState(() => {
+  const [nextId, setNextId] = useState<number>(() => {
     const savedNextId = localStorage.getItem('nextId');
     return savedNextId ? JSON.parse(savedNextId) : 1;
   });
@@ -18,7 +24,7 @@ function App() {
     localStorage.setItem('nextId', JSON.stringify(nextId));
   }, [todos, nextId]);
 
-  const addTodo = (text) => {
+  const addTodo = (text: string) => {
     if (!text.trim()) return;
 
     setTodos([
@@ -32,7 +38,7 @@ function App() {
     setNextId(nextId + 1);
   };
 
-  const toggleTodo = (id) => {
+  const toggleTodo = (id: number) => {
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
@@ -40,7 +46,7 @@ function App() {
     );
   };
 
-  const deleteTodo = (id) => {
+  const deleteTodo = (id: number) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 

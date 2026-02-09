@@ -1,7 +1,19 @@
 import '../styles/List.css';
 import deleteIcon from '../assets/delete.svg';
 
-export function List({ todos, toggleTodo, deleteTodo }){
+interface Todo {
+    id: number;
+    text: string;
+    completed: boolean;
+}
+
+interface ListProps {
+    todos: Todo[];
+    toggleTodo: (id: number) => void;
+    deleteTodo: (id: number) => void;
+}
+
+export function List({ todos, toggleTodo, deleteTodo }: ListProps) {
     return (
         <div className="list-container">
             {todos.length === 0 ? (
